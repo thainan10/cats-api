@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/cats")
+@CrossOrigin(origins = "*")
 public class CatResource {
 
     private final Logger log = LoggerFactory.getLogger(CatResource.class);
