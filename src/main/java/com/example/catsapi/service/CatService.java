@@ -20,7 +20,9 @@ public class CatService {
     }
 
     public Page<Cat> get(Pageable pageable) {
-        return catRepository.findAll(pageable);
+        Page<Cat> result = catRepository.findAll(pageable);
+        result.getContent().stream().map(cat -> cat.getHobbies().size());
+        return result;
     }
 
     public Cat update(Cat cat) {
